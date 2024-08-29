@@ -176,16 +176,16 @@ body {
 @media (max-width: 600px) {
     #celebrate-btn {
         padding: 0.5rem 1rem;
-        font-size: 1.2rem;
+        font-size: 3rem;
     }
 
     #celebration-text {
-        font-size: 3rem; /* Reduced font size for mobile */
+        font-size: 5rem; /* Reduced font size for mobile */
         padding: 0 0.5rem; /* Adjusted padding for smaller screens */
     }
 
     #sad-message {
-        font-size: 2rem; /* Further reduced font size for smaller screens */
+        font-size: 4rem; /* Further reduced font size for smaller screens */
         padding: 0 0.5rem; /* Adjusted padding for smaller screens */
     }
 
