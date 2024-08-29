@@ -12,7 +12,7 @@ document.getElementById('celebrate-btn').addEventListener('click', function() {
     // Change the background color to a bright or colorful color
     document.body.style.backgroundColor = '#f4e1d2';
 
-    const numHearts = 50; // Number of hearts to create
+    const numHearts = 150; // Number of hearts to create
     const container = document.getElementById('hearts-container');
 
     for (let i = 0; i < numHearts; i++) {
