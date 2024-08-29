@@ -8,6 +8,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    overflow: hidden; /* Prevent scroll during animation */
 }
 
 /* Black screen and button */
@@ -37,6 +38,18 @@ body {
     background-color: #2e2d2e;
 }
 
+/* Celebration Background */
+#celebration-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff4081, #ffeb3b); /* Colorful gradient */
+    display: none; /* Hidden initially */
+    z-index: 4; /* Ensure it is behind other elements */
+}
+
 /* Confetti canvas */
 #confetti-canvas {
     position: absolute;
@@ -54,24 +67,22 @@ body {
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 4rem; /* Adjusted for mobile */
-    color: #618685;
+    font-size: 2rem; /* Adjusted for mobile */
+    color: #ff4081; /* Updated color */
     text-align: center;
     display: none;
     z-index: 8;
     padding: 0 1rem; /* Added padding for better readability */
 }
 
-
-
 /* Sad message */
 #sad-message {
     display: none;
     position: absolute;
-    top: 40%; /* Adjusted for mobile */
+    top: 50%; /* Adjusted vertical position */
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 3rem; /* Reduced font size for mobile */
+    font-size: 1rem; /* Further reduced font size for smaller screens */
     color: #484f4f;
     text-align: center;
     white-space: pre-wrap; /* Preserve spaces and line breaks */
@@ -110,8 +121,8 @@ body {
 
 .heart {
     position: absolute;
-    width: 30px; /* Adjusted size for mobile */
-    height: 30px;
+    width: 25px; /* Adjusted size for mobile */
+    height: 25px;
     background: url('heart.png') no-repeat center center;
     background-size: contain;
     opacity: 0;
@@ -126,11 +137,11 @@ body {
     }
     50% {
         opacity: 1;
-        transform: translateY(-100px);
+        transform: translateY(-80px); /* Adjusted distance for mobile */
     }
     100% {
         opacity: 0;
-        transform: translateY(-200px);
+        transform: translateY(-160px); /* Adjusted distance for mobile */
     }
 }
 
@@ -146,8 +157,8 @@ body {
 
 .star {
     position: absolute;
-    width: 10px; /* Adjusted size for mobile */
-    height: 10px;
+    width: 8px; /* Smaller stars for mobile */
+    height: 8px;
     background: url('star.png') no-repeat center center;
     background-size: contain;
     opacity: 0;
@@ -166,7 +177,7 @@ body {
 
 .animated-image {
     position: absolute;
-    width: 80px; /* Adjusted size for mobile */
+    width: 70px; /* Adjusted size for mobile */
     height: auto;
     opacity: 0;
     animation: floatAndFade 6s ease-in-out forwards;
@@ -176,30 +187,30 @@ body {
 @media (max-width: 600px) {
     #celebrate-btn {
         padding: 0.5rem 1rem;
-        font-size: 3rem;
+        font-size: 2rem; /* Adjusted font size for mobile */
     }
 
     #celebration-text {
-        font-size: 1rem; /* Reduced font size for mobile */
+        font-size: 1.5rem; /* Reduced font size for mobile */
         padding: 0 0.5rem; /* Adjusted padding for smaller screens */
     }
 
     #sad-message {
-        font-size: 1rem; /* Further reduced font size for smaller screens */
+        font-size: 0.9rem; /* Further reduced font size for smaller screens */
         padding: 0 0.5rem; /* Adjusted padding for smaller screens */
     }
 
     .heart {
-        width: 25px; /* Smaller hearts for mobile */
-        height: 25px;
+        width: 20px; /* Smaller hearts for mobile */
+        height: 20px;
     }
 
     .star {
-        width: 8px; /* Smaller stars for mobile */
-        height: 8px;
+        width: 6px; /* Smaller stars for mobile */
+        height: 6px;
     }
 
     .animated-image {
-        width: 70px; /* Smaller images for mobile */
+        width: 60px; /* Smaller images for mobile */
     }
 }
