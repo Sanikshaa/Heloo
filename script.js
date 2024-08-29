@@ -1,3 +1,6 @@
+
+
+
 document.getElementById('celebrate-btn').addEventListener('click', function() {
     // Play background music
     const backgroundMusic = document.getElementById('background-music');
@@ -8,6 +11,23 @@ document.getElementById('celebrate-btn').addEventListener('click', function() {
 
     // Change the background color to a bright or colorful color
     document.body.style.backgroundColor = '#f4e1d2';
+
+    const numHearts = 50; // Number of hearts to create
+    const container = document.getElementById('hearts-container');
+
+    for (let i = 0; i < numHearts; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = Math.random() * 100 + '%'; // Random horizontal position
+        heart.style.top = Math.random() * 100 + '%';  // Random vertical position
+        heart.style.animationDuration = Math.random() * 3 + 3 + 's'; // Random duration between 3 and 6 seconds
+        container.appendChild(heart);
+    }
+
+    // Show the hearts container when needed
+    function showHearts() {
+        container.style.display = 'block';
+    }
 
     // Show the confetti canvas
     const canvas = document.getElementById('confetti-canvas');
